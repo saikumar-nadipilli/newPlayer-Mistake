@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { Component } from "react";
+import FirstPage from "./components/FirstPage";
+import SecondPage from "./components/SecondPage";
+
+import "./App.css";
+
+class App extends Component {
+  state = {
+    participantsList: [
+      { name: "Usain Bolt", speed: "60 KM/H", startTime: "10:00" },
+      { name: "PT Usha", speed: "40 KM/H", startTime: "10:00" },
+      { name: "Bill Gates", speed: "20 KM/H", startTime: "10:00" },
+      //   { name: "Usain Bolt", speed: "60 KM/H", startTime: "10:00" },
+      //   { name: "PT Usha", speed: "40 KM/H", startTime: "10:00" },
+      //   { name: "Bill Gates", speed: "20 KM/H", startTime: "10:00" },
+      //   { name: "Usain Bolt", speed: "60 KM/H", startTime: "10:00" },
+      //   { name: "PT Usha", speed: "40 KM/H", startTime: "10:00" },
+      //   { name: "Bill Gates", speed: "20 KM/H", startTime: "10:00" },
+    ],
+  };
+
+  render() {
+    // const { participantsList } = this.state;
+    return (
+      <div className="app-container">
+        <Routes>
+          <Route
+            exact
+            path="/"
+            element={<FirstPage participantsList={this.participantsList} />}
+          />
+          <Route exact path="/secondPage" element={<SecondPage />} />
+        </Routes>
+      </div>
+    );
+  }
 }
 
 export default App;

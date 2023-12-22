@@ -1,0 +1,15 @@
+.table-row {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  background-color: #edede9;
+  margin-bottom: 10px;
+}
+
+.row-value {
+  font-family: "Roboto";
+  font-size: 12px;
+  width: 30%;
+}
